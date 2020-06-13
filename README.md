@@ -5,9 +5,11 @@ The Github Repository contains a demo project for Maersk and task includes of sh
 The Project is hosted using Github pages at https://sammythekop.github.io/maersk-shuffle-sort/index.html
 
 # Project Structure
+```
 .
 +-- _styles
 |   +-- style.css
 +-- _utils
 |   +-- utils.js
 +-- _index.html
+```

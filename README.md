@@ -11,10 +11,10 @@ The Project is hosted using Github pages at https://sammythekop.github.io/maersk
 
 # Project Structure
 ```
-.
-+-- _styles
-|   +-- style.css
-+-- _utils
-|   +-- utils.js
-+-- _index.html
+  .
+  +-- styles
+  |   +-- style.css
+  +-- utils
+  |   +-- utils.js
+  +-- index.html
 ```

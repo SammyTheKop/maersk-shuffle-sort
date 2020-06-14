@@ -6,7 +6,7 @@
  * @description The function is used to shuffle the items
  * @returns shuffledItems
  */
-function shuffleItems(items) {
+const shuffleItems = (items) => {
   let shuffledItems = items.slice(0);
   let temp;
   let i = shuffledItems.length;
@@ -20,7 +20,7 @@ function shuffleItems(items) {
   return shuffledItems;
 }
 
-window.onload = function () {
+window.onload = () => {
   // fetching and storing the DOM Element
   let list = document.getElementById("shuffleAndSort");
 
@@ -30,15 +30,19 @@ window.onload = function () {
    * @description Parent Function to shuffle the HTML nodes and updates the DOM
    * @returns none
    */
-  function shuffle() {
+  const shuffle = () => {
     let nodes = list.children,
       i = 0;
     nodes = Array.prototype.slice.call(nodes);
     nodes = shuffleItems(nodes);
+
+    // Mutating the DOM properly
+    const fragment = document.createDocumentFragment();
     while (i < nodes.length) {
-      list.appendChild(nodes[i]);
+      fragment.appendChild(nodes[i]);
       ++i;
     }
+    list.appendChild(fragment);
   }
 
   /**
@@ -47,7 +51,7 @@ window.onload = function () {
    * @description Parent Function to sort the HTML nodes and updates the DOM
    * @returns none
    */
-  function sortItems() {
+  const sortItems = () => {
     let items = list.childNodes;
     let itemsArr = [];
     for (let i in items) {
@@ -57,7 +61,7 @@ window.onload = function () {
       }
     }
 
-    itemsArr.sort(function (a, b) {
+    itemsArr.sort((a, b) => {
       return a.innerHTML == b.innerHTML
         ? 0
         : a.innerHTML > b.innerHTML
@@ -65,9 +69,12 @@ window.onload = function () {
         : -1;
     });
 
+    // Mutating the DOM properly
+    const fragment = document.createDocumentFragment();
     for (let i = 0; i < itemsArr.length; ++i) {
-      list.appendChild(itemsArr[i]);
+      fragment.appendChild(itemsArr[i]);
     }
+    list.appendChild(fragment);
   }
 
   // Binding the JS Utility Functions with the OnClick Event

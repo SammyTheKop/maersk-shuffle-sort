@@ -1,10 +1,15 @@
 /**
 * Styles for the Maersk project
 */
+
+body {
+  margin: 0;
+}
+
 .container {
-  width: 960px;
   margin: 0 auto;
   background: #efefef;
+  height: 1vh;
 }
 
 header {
